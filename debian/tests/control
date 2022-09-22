@@ -1,0 +1,7 @@
+Tests: libsndfile1-dev
+Restrictions: allow-stderr, superficial
+Depends: build-essential, libsndfile1-dev
+
+Tests: upstream-testsuite
+Restrictions: allow-stderr
+Depends: @, build-essential, python3
