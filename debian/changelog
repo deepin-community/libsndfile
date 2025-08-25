@@ -1,3 +1,10 @@
+libsndfile (1.2.2-2deepin1) unstable; urgency=medium
+
+  [ hudeng ]
+  * feat: add sw64 support.
+
+ -- Tianyu Chen <sweetyfish@deepin.org>  Mon, 25 Aug 2025 21:54:18 +0800
+
 libsndfile (1.2.2-2) unstable; urgency=high
 
   [ Fabian Toepfer ]
