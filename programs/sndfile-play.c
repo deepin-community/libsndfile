@@ -56,7 +56,7 @@
 
 #if defined (__ANDROID__)
 
-#elif defined (__linux__) || defined (__FreeBSD_kernel__) || defined (__FreeBSD__)
+#elif defined (__linux__) || defined (__FreeBSD_kernel__) || defined (__FreeBSD__) || defined (__riscos__)
 	#include 	<fcntl.h>
 	#include 	<sys/ioctl.h>
 	#include 	<sys/soundcard.h>
@@ -64,7 +64,7 @@
 #elif HAVE_SNDIO_H
 	#include <sndio.h>
 
-#elif (defined (sun) && defined (unix))
+#elif (defined (sun) && defined (unix)) || defined(__NetBSD__)
 	#include <fcntl.h>
 	#include <sys/ioctl.h>
 	#include <sys/audioio.h>
@@ -328,10 +328,12 @@ alsa_write_float (snd_pcm_t *alsa_dev, float *data, int frames, int channels)
 					return 0 ;
 					break ;
 
+#if defined ESTRPIPE && ESTRPIPE != EPIPE
 			case -ESTRPIPE :
 					fprintf (stderr, "alsa_write_float: Suspend event.n") ;
 					return 0 ;
 					break ;
+#endif
 
 			case -EIO :
 					puts ("alsa_write_float: EIO") ;
@@ -353,7 +355,7 @@ alsa_write_float (snd_pcm_t *alsa_dev, float *data, int frames, int channels)
 **	Linux/OSS functions for playing a sound.
 */
 
-#if !defined (__ANDROID__) && (defined (__linux__) || defined (__FreeBSD_kernel__) || defined (__FreeBSD__))
+#if !defined (__ANDROID__) && (defined (__linux__) || defined (__FreeBSD_kernel__) || defined (__FreeBSD__) || defined (__riscos__))
 
 static	int	opensoundsys_open_device (int channels, int srate) ;
 
@@ -727,7 +729,7 @@ sndio_play (int argc, char *argv [])
 **	Solaris.
 */
 
-#if (defined (sun) && defined (unix)) /* ie Solaris */
+#if (defined (sun) && defined (unix)) || defined(__NetBSD__)
 
 static void
 solaris_play (int argc, char *argv [])
@@ -764,8 +766,6 @@ solaris_play (int argc, char *argv [])
 		audio_info.play.channels = sfinfo.channels ;
 		audio_info.play.precision = 16 ;
 		audio_info.play.encoding = AUDIO_ENCODING_LINEAR ;
-		audio_info.play.gain = AUDIO_MAX_GAIN ;
-		audio_info.play.balance = AUDIO_MID_BALANCE ;
 
 		if ((error = ioctl (audio_fd, AUDIO_SETINFO, &audio_info)))
 		{	perror ("ioctl (AUDIO_SETINFO) failed") ;
@@ -807,7 +807,7 @@ solaris_play (int argc, char *argv [])
 	return ;
 } /* solaris_play */
 
-#endif /* Solaris */
+#endif /* Solaris or NetBSD */
 
 /*==============================================================================
 **	Main function.
@@ -841,11 +841,11 @@ main (int argc, char *argv [])
 		else
 	#endif
 		opensoundsys_play (argc, argv) ;
-#elif defined (__FreeBSD_kernel__) || defined (__FreeBSD__)
+#elif defined (__FreeBSD_kernel__) || defined (__FreeBSD__) || defined (__riscos__)
 	opensoundsys_play (argc, argv) ;
 #elif HAVE_SNDIO_H
 	sndio_play (argc, argv) ;
-#elif (defined (sun) && defined (unix))
+#elif (defined (sun) && defined (unix)) || defined(__NetBSD__)
 	solaris_play (argc, argv) ;
 #elif (OS_IS_WIN32 == 1)
 	win32_play (argc, argv) ;

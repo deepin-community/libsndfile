@@ -1,2 +1,2 @@
-examples/*.c
 debian/examples/Makefile
+examples/*.c

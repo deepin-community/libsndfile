@@ -1,0 +1,12 @@
+src/Symbols.*
+src/libsndfile-1.def
+src/test_endswap.c
+tests/benchmark.c
+tests/floating_point_test.c
+tests/header_test.c
+tests/pcm_test.c
+tests/pipe_test.c
+tests/rdwr_test.c
+tests/scale_clip_test.c
+tests/utils.?
+tests/write_read_test.c

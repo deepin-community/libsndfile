@@ -10,15 +10,19 @@ DEB_BUILD_MAINT_OPTIONS = hardening=+all
 execute_after_dh_auto_build:
 	dh_auto_build -- checkprograms
 
-override_dh_clean:
-	dh_clean
+execute_after_dh_clean:
 	-find man/ -type l -delete
 
-override_dh_install:
-	dh_install
+execute_after_dh_install:
 	find debian/libsndfile1-dev/ -name test_wrapper.sh -exec \
 		sed -e 's|^\(ABS_TOP_SRCDIR\)=.*|\1=$$\(pwd\)|' -i {} +
 	find debian/libsndfile1-dev/ -name pedantic-header-test.sh -exec \
 		sed -e 's| -I *[^ ]*| |g' -i {} +
 	find debian/libsndfile1-dev/usr/lib/ -name "*.sh" -exec \
 		chmod +x {} +
+
+licensecheck:
+	licensecheck --check '.*' --recursive --deb-machine --lines 0 * \
+		> debian/copyright_newhints
+	cmp debian/copyright_hints debian/copyright_newhints \
+		&& rm debian/copyright_newhints
