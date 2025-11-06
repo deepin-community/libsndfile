@@ -3,3 +3,4 @@ fix_typos.patch
 CVE-2022-33065.patch
 CVE-2024-50612.patch
 0001-deepin-sw_64-support.diff
+0001-CVE-2021-4156.patch
