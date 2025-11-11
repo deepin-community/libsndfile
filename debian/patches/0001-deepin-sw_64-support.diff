@@ -1,3 +1,4 @@
+
 diff --git a/tests/checksum_test.c b/tests/checksum_test.c
 index 4b37b3d..edebaaf 100644
 --- a/tests/checksum_test.c

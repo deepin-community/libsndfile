@@ -1,7 +1,6 @@
 ---
 include:
-  - https://salsa.debian.org/salsa-ci-team/pipeline/raw/master/salsa-ci.yml
-  - https://salsa.debian.org/salsa-ci-team/pipeline/raw/master/pipeline-jobs.yml
+  - https://salsa.debian.org/lts-team/pipeline/raw/master/recipes/bullseye.yml
 
 variables:
   SALSA_CI_BLHC_ARGS: --ignore-line=.*CXX.Compiler.Vendor.*
