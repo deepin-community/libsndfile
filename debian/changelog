@@ -1,3 +1,9 @@
+libsndfile (1.0.31-2deepin2) unstable; urgency=medium
+
+  * fix CVE-2022-33065 CVE-2024-50612 CVE-2021-4156
+
+ -- zengwei <zengwei1@uniontech.com>  Tue, 23 Dec 2025 16:48:07 +0800
+
 libsndfile (1.0.31-2deepin1) unstable; urgency=medium
 
   * feat: add sw64 support.
