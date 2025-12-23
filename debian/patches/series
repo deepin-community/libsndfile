@@ -1,3 +1,6 @@
 fix_typos.patch
 0002-ms_adpcm-Fix-and-extend-size-checks.patch
 0001-deepin-sw_64-support.diff
+CVE-2022-33065.patch
+CVE-2024-50612.patch
+CVE-2021-4156.patch
