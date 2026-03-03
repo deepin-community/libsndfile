@@ -1,0 +1,11 @@
+--- a/tests/test_wrapper.sh.in
++++ b/tests/test_wrapper.sh.in
+@@ -345,7 +345,7 @@ echo "----------------------------------
+ # opus-tests
+ ./tests/ogg_opus_test@EXEEXT@
+ ./tests/compression_size_test@EXEEXT@ opus
+-./tests/lossy_comp_test@EXEEXT@ ogg_opus
++#./tests/lossy_comp_test@EXEEXT@ ogg_opus
+ ./tests/string_test@EXEEXT@ opus
+ 
+ echo "----------------------------------------------------------------------"

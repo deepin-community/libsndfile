@@ -10,9 +10,9 @@ else
     CROSS_COMPILE=
 fi
 
-# Deliberately word-splitting pkg-config's output:
+# Deliberately word-splitting pkgconf's output:
 # shellcheck disable=SC2046
-"${CROSS_COMPILE}gcc" -oexamples/make_sine examples/make_sine.c -lm $("${CROSS_COMPILE}pkg-config" --cflags --libs sndfile)
+"${CROSS_COMPILE}gcc" -oexamples/make_sine examples/make_sine.c -lm $("${CROSS_COMPILE}pkgconf" --cflags --libs sndfile)
 }
 
 cp -v /usr/lib/${DEB_HOST_MULTIARCH}/sndfile/tests/* tests/

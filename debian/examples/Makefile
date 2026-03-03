@@ -1,6 +1,6 @@
 SRC=$(wildcard *.c)
 APPS=$(SRC:%.c=%)
-SNDLIBS=$(LIBS) $(shell pkg-config --cflags --libs sndfile) -lm
+SNDLIBS=$(LIBS) $(shell pkgconf --cflags --libs sndfile) -lm
 
 .PHONY: default clean
 
