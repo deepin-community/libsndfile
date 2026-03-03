@@ -1,8 +1,7 @@
+src/test_main usr/lib/${DEB_HOST_MULTIARCH}/sndfile/tests/
+tests/*.sh usr/lib/${DEB_HOST_MULTIARCH}/sndfile/tests/
+tests/.libs/* usr/lib/${DEB_HOST_MULTIARCH}/sndfile/tests/
 usr/include/*
-usr/lib/*/lib*.a
 usr/lib/*/lib*.so
 usr/lib/*/pkgconfig/sndfile.pc
 usr/share/doc/libsndfile/* usr/share/doc/libsndfile1-dev/markdown/
-tests/.libs/* usr/lib/${DEB_HOST_MULTIARCH}/sndfile/tests/
-tests/*.sh usr/lib/${DEB_HOST_MULTIARCH}/sndfile/tests/
-src/test_main usr/lib/${DEB_HOST_MULTIARCH}/sndfile/tests/

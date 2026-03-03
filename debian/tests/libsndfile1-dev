@@ -20,7 +20,7 @@ fi
 cp examples/make_sine.c "$WORKDIR"
 cd "$WORKDIR"
 
-# Deliberately word-splitting pkg-config's output:
+# Deliberately word-splitting pkgconf's output:
 # shellcheck disable=SC2046
-"${CROSS_COMPILE}gcc" -omake_sine make_sine.c -lm $("${CROSS_COMPILE}pkg-config" --cflags --libs sndfile)
+"${CROSS_COMPILE}gcc" -omake_sine make_sine.c -lm $("${CROSS_COMPILE}pkgconf" --cflags --libs sndfile)
 ./make_sine
