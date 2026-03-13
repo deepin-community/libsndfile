@@ -1,3 +1,9 @@
+libsndfile (1.2.2-2deepin1) unstable; urgency=medium
+
+  * Add sw support.
+
+ -- liujiahe <liujiahe@uniontech.com>  Thu, 12 Mar 2026 16:52:41 +0800
+
 libsndfile (1.2.2-2) unstable; urgency=high
 
   [ Fabian Toepfer ]
