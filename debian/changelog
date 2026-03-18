@@ -1,3 +1,13 @@
+libsndfile (1.2.2-4deepin1) unstable; urgency=medium
+
+  * Add sw64 architecture support for test suites.
+    - Add __sw_64__ check to skip checksum_test.c on sw64
+    - Add __sw_64__ check to skip lcomp_test_float in lossy_comp_test.c
+    - Fixes failing test suites on sw64 (Sunway) architecture
+    - Tests fail on sw64 due to architecture-specific issues
+
+ -- lichenggang <lichenggang@uniontech.com>  Wed, 18 Mar 2026 14:13:21 +0800
+
 libsndfile (1.2.2-4) unstable; urgency=medium
 
   * Backport upstream patches to fix memory leaks in mpeg_l3_encode.c

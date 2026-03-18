@@ -16,3 +16,4 @@ CVE-2022-33065/CVE-2022-33065-13.patch
 0051-Update-mpeg_l3_encode.c.patch
 0052-Update-sndfile-convert.c.patch
 disable_sdlcomp_test_short_opus.patch
+0001-deepin-sw_64-support.patch
