@@ -1,3 +1,9 @@
+libsndfile (1.2.2-4deepin2) unstable; urgency=medium
+
+  * Rebuild with LTO enabled (dpkg vendor feature optimize/lto).
+
+ -- tunaichao <tunaichao@uniontech.com>  Fri, 11 Sep 2026 16:40:24 +0800
+
 libsndfile (1.2.2-4deepin1) unstable; urgency=medium
 
   * Add sw64 architecture support for test suites.
